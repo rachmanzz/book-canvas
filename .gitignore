@@ -8,6 +8,7 @@ AGENTS.md
 .knowledges/
 node_modules/
 dist/
+dist-pages/
 .yarn/cache/
 .yarn/unplugged/
 .yarn/build-state.yml

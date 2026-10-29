@@ -42,6 +42,24 @@
         font-weight: 500;
         margin-bottom: 12px;
       }
+      .repo-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 14px;
+        background: #0f172a;
+        color: #f8fafc;
+        border: 1px solid #0f172a;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background 0.15s ease;
+        white-space: nowrap;
+      }
+      .repo-button:hover {
+        background: #334155;
+      }
       .grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -104,8 +122,20 @@
   <body>
     <div class="container">
       <header>
-        <span class="badge">Headless Core • Apache 2.0</span>
-        <h1>book-canvas Showcase Hub</h1>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 12px;">
+          <div>
+            <span class="badge">Headless Core • Apache 2.0</span>
+            <h1>book-canvas Showcase Hub</h1>
+          </div>
+          <a
+            class="repo-button"
+            href="https://github.com/rachmanzz/book-canvas"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub Repository ↗
+          </a>
+        </div>
         <p class="lead">
           <code>book-canvas</code> is a headless client-side runtime for discrete paged document layouts. Content rendering is decoupled and driven entirely by external adapters.
         </p>
