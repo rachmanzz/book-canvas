@@ -3,116 +3,179 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Canvas Example</title>
+    <title>Book Canvas - Example Hub</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
       body {
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        overflow: hidden;
+        background-color: #f8fafc;
+        color: #0f172a;
+        line-height: 1.6;
+        padding: 40px 20px;
+      }
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
       }
       header {
-        height: 52px;
-        background-color: #ffffff;
-        border-bottom: 1px solid #e2e8f0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        z-index: 1000;
+        margin-bottom: 36px;
       }
-      .title {
+      h1 {
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        margin-bottom: 8px;
+        color: #0f172a;
+      }
+      .lead {
+        font-size: 16px;
+        color: #475569;
+        max-width: 680px;
+      }
+      .badge {
+        display: inline-block;
+        padding: 2px 8px;
+        background: #e2e8f0;
+        color: #334155;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 12px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 24px;
+      }
+      .card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 20px;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      }
+      .card:hover {
+        border-color: #cbd5e1;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+      .card-tag {
+        font-size: 11px;
         font-weight: 600;
-        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #2563eb;
+        margin-bottom: 8px;
+      }
+      .card h2 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 8px;
         color: #1e293b;
       }
-      .controls {
-        display: flex;
-        gap: 8px;
-        align-items: center;
+      .card p {
+        font-size: 13px;
+        color: #64748b;
+        margin-bottom: 16px;
+        line-height: 1.5;
       }
-      button {
-        padding: 6px 14px;
+      .card-arrow {
         font-size: 13px;
         font-weight: 500;
-        border-radius: 6px;
-        border: 1px solid #cbd5e1;
-        background: #f8fafc;
-        color: #334155;
-        cursor: pointer;
-        transition: all 0.15s ease;
+        color: #2563eb;
+        display: flex;
+        align-items: center;
+        gap: 4px;
       }
-      button:hover {
-        background: #f1f5f9;
-        border-color: #94a3b8;
-      }
-      button.primary {
-        background: #2563eb;
-        color: #ffffff;
-        border-color: #2563eb;
-      }
-      button.primary:hover {
-        background: #1d4ed8;
-      }
-      #canvas-host {
-        flex: 1;
-        width: 100%;
-        height: calc(100vh - 52px);
-      }
-      .status-badge {
+      footer {
+        margin-top: 48px;
+        padding-top: 20px;
+        border-top: 1px solid #e2e8f0;
         font-size: 12px;
-        color: #64748b;
-        margin-left: 12px;
+        color: #94a3b8;
       }
     </style>
   </head>
   <body>
-    <header>
-      <div style="display: flex; align-items: center">
-        <div class="title">📖 Book Canvas Demo</div>
-        <div class="status-badge" id="pointer-info">Pointer: -</div>
-      </div>
-      <div class="controls">
-        <label style="font-size: 13px; color: #475569; font-weight: 500">Paper:</label>
-        <select id="select-paper-size" style="padding: 6px 10px; font-size: 13px; border-radius: 6px; border: 1px solid #cbd5e1; background: #f8fafc; color: #334155; cursor: pointer;">
-          <option value="A4">A4 (210 × 297 mm)</option>
-          <option value="LETTER">Letter (8.5 × 11 in)</option>
-          <option value="LEGAL">Legal (8.5 × 14 in)</option>
-        </select>
-        <label style="font-size: 13px; color: #475569; font-weight: 500">Layout:</label>
-        <select id="select-layout" style="padding: 6px 10px; font-size: 13px; border-radius: 6px; border: 1px solid #cbd5e1; background: #f8fafc; color: #334155; cursor: pointer;">
-          <option value="auto">Auto Columns</option>
-          <option value="single">Single Column</option>
-        </select>
-        <label style="font-size: 13px; color: #475569; font-weight: 500">Margins:</label>
-        <select id="select-margins" style="padding: 6px 10px; font-size: 13px; border-radius: 6px; border: 1px solid #cbd5e1; background: #f8fafc; color: #334155; cursor: pointer;">
-          <option value="NORMAL">Normal (72px)</option>
-          <option value="NARROW">Narrow (36px)</option>
-          <option value="WIDE">Wide (120px)</option>
-        </select>
-        <label style="display: flex; align-items: center; gap: 4px; font-size: 13px; color: #475569; font-weight: 500; cursor: pointer;">
-          <input type="checkbox" id="check-guides" checked /> Guides
-        </label>
-        <label style="display: flex; align-items: center; gap: 4px; font-size: 13px; color: #475569; font-weight: 500; cursor: pointer;">
-          <input type="checkbox" id="check-headers-footers" checked /> Header/Footer
-        </label>
-        <label style="display: flex; align-items: center; gap: 4px; font-size: 13px; color: #475569; font-weight: 500; cursor: pointer;">
-          <input type="checkbox" id="check-clamp-scroll" checked /> Bound Scroll
-        </label>
-        <button id="btn-zoom-out">Zoom -</button>
-        <span id="zoom-label" style="font-size: 13px; min-width: 45px; text-align: center">100%</span>
-        <button id="btn-zoom-in">Zoom +</button>
-        <button id="btn-reset">Reset View</button>
-        <button class="primary" id="btn-add-page">+ Add Page</button>
-      </div>
-    </header>
-    <main id="canvas-host"></main>
-    <script type="module" src="./main.ts"></script>
+    <div class="container">
+      <header>
+        <span class="badge">Headless Core • Apache 2.0</span>
+        <h1>book-canvas Showcase Hub</h1>
+        <p class="lead">
+          <code>book-canvas</code> is a headless client-side runtime for discrete paged document layouts. Content rendering is decoupled and driven entirely by external adapters.
+        </p>
+      </header>
+
+      <section>
+        <h3 style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; font-weight: 600;">
+          Minimal Adapter Examples
+        </h3>
+
+        <div class="grid">
+          <a class="card" href="./word/index.html">
+            <div>
+              <div class="card-tag">Document Editor</div>
+              <h2>Word Adapter</h2>
+              <p>Physical A4 sheets with margin guides, headers, footers, and continuous vertical scroll clamping.</p>
+            </div>
+            <div class="card-arrow">Open demo →</div>
+          </a>
+
+          <a class="card" href="./slides/index.html">
+            <div>
+              <div class="card-tag" style="color: #ea580c;">Presentation Decks</div>
+              <h2>Slide Presentation</h2>
+              <p>Standard 16:9 landscape pitch deck slides with clean title and content cards without document margins.</p>
+            </div>
+            <div class="card-arrow" style="color: #ea580c;">Open demo →</div>
+          </a>
+
+          <a class="card" href="./poster/index.html">
+            <div>
+              <div class="card-tag" style="color: #8b5cf6;">Graphic Artboard</div>
+              <h2>Poster / Canva Style</h2>
+              <p>Independent graphic artboards with 360-degree freeform panning and zero document headers.</p>
+            </div>
+            <div class="card-arrow" style="color: #8b5cf6;">Open demo →</div>
+          </a>
+
+          <a class="card" href="./markdown/index.html">
+            <div>
+              <div class="card-tag" style="color: #0f766e;">Formatted Text</div>
+              <h2>Markdown Viewer</h2>
+              <p>Rendered documentation pages with headings, quotes, code blocks, and margin boundaries.</p>
+            </div>
+            <div class="card-arrow" style="color: #0f766e;">Open demo →</div>
+          </a>
+
+          <a class="card" href="./spreadsheet/index.html">
+            <div>
+              <div class="card-tag" style="color: #16a34a;">Data Grid</div>
+              <h2>Spreadsheet (Excel)</h2>
+              <p>Tabular data grid with editable cells mounted on landscape pages with automatic page flow.</p>
+            </div>
+            <div class="card-arrow" style="color: #16a34a;">Open demo →</div>
+          </a>
+
+          <a class="card" href="./pdf/index.html">
+            <div>
+              <div class="card-tag" style="color: #dc2626;">Print Layout</div>
+              <h2>PDF & Print Preview</h2>
+              <p>Standard print media integration with native browser print styling per document sheet.</p>
+            </div>
+            <div class="card-arrow" style="color: #dc2626;">Open demo →</div>
+          </a>
+        </div>
+      </section>
+
+      <footer>
+        book-canvas • Copyright 2026 Muhammad Abdurrahman • Licensed under Apache-2.0
+      </footer>
+    </div>
   </body>
 </html>

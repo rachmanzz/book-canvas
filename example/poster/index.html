@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poster / Graphic Artboard Example - Book Canvas</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: system-ui, -apple-system, sans-serif; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+      header { height: 50px; background: #18181b; color: #ffffff; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; z-index: 1000; }
+      .nav-left { display: flex; align-items: center; gap: 12px; }
+      .back-btn { text-decoration: none; color: #a1a1aa; font-size: 13px; font-weight: 500; }
+      .back-btn:hover { color: #ffffff; }
+      .title { font-weight: 600; font-size: 14px; }
+      .controls { display: flex; gap: 8px; align-items: center; font-size: 12px; }
+      button { padding: 5px 12px; font-size: 12px; font-weight: 500; border-radius: 6px; border: 1px solid #3f3f46; background: #27272a; color: #f4f4f5; cursor: pointer; }
+      button:hover { background: #3f3f46; }
+      button.primary { background: #8b5cf6; color: #ffffff; border-color: #8b5cf6; }
+      #canvas-host { flex: 1; width: 100%; height: calc(100vh - 50px); background: #09090b; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-left">
+        <a class="back-btn" href="../index.html">← Hub</a>
+        <div class="title">Graphic Poster Artboard (360° Free Pan) Demo</div>
+      </div>
+      <div class="controls">
+        <button id="btn-zoom-out">Zoom -</button>
+        <span id="zoom-label" style="min-width: 35px; text-align: center">100%</span>
+        <button id="btn-zoom-in">Zoom +</button>
+        <button id="btn-reset">Reset</button>
+        <button class="primary" id="btn-add-page">+ Add Poster</button>
+      </div>
+    </header>
+    <main id="canvas-host"></main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
