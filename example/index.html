@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Canvas Example</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
+      }
+      header {
+        height: 52px;
+        background-color: #ffffff;
+        border-bottom: 1px solid #e2e8f0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        z-index: 1000;
+      }
+      .title {
+        font-weight: 600;
+        font-size: 15px;
+        color: #1e293b;
+      }
+      .controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      button {
+        padding: 6px 14px;
+        font-size: 13px;
+        font-weight: 500;
+        border-radius: 6px;
+        border: 1px solid #cbd5e1;
+        background: #f8fafc;
+        color: #334155;
+        cursor: pointer;
+        transition: all 0.15s ease;
+      }
+      button:hover {
+        background: #f1f5f9;
+        border-color: #94a3b8;
+      }
+      button.primary {
+        background: #2563eb;
+        color: #ffffff;
+        border-color: #2563eb;
+      }
+      button.primary:hover {
+        background: #1d4ed8;
+      }
+      #canvas-host {
+        flex: 1;
+        width: 100%;
+        height: calc(100vh - 52px);
+      }
+      .status-badge {
+        font-size: 12px;
+        color: #64748b;
+        margin-left: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div style="display: flex; align-items: center">
+        <div class="title">📖 Book Canvas Demo</div>
+        <div class="status-badge" id="pointer-info">Pointer: -</div>
+      </div>
+      <div class="controls">
+        <label style="font-size: 13px; color: #475569; font-weight: 500">Paper:</label>
+        <select id="select-paper-size" style="padding: 6px 10px; font-size: 13px; border-radius: 6px; border: 1px solid #cbd5e1; background: #f8fafc; color: #334155; cursor: pointer;">
+          <option value="A4">A4 (210 × 297 mm)</option>
+          <option value="LETTER">Letter (8.5 × 11 in)</option>
+          <option value="LEGAL">Legal (8.5 × 14 in)</option>
+        </select>
+        <label style="font-size: 13px; color: #475569; font-weight: 500">Layout:</label>
+        <select id="select-layout" style="padding: 6px 10px; font-size: 13px; border-radius: 6px; border: 1px solid #cbd5e1; background: #f8fafc; color: #334155; cursor: pointer;">
+          <option value="auto">Auto Columns</option>
+          <option value="single">Single Column</option>
+        </select>
+        <label style="font-size: 13px; color: #475569; font-weight: 500">Margins:</label>
+        <select id="select-margins" style="padding: 6px 10px; font-size: 13px; border-radius: 6px; border: 1px solid #cbd5e1; background: #f8fafc; color: #334155; cursor: pointer;">
+          <option value="NORMAL">Normal (72px)</option>
+          <option value="NARROW">Narrow (36px)</option>
+          <option value="WIDE">Wide (120px)</option>
+        </select>
+        <label style="display: flex; align-items: center; gap: 4px; font-size: 13px; color: #475569; font-weight: 500; cursor: pointer;">
+          <input type="checkbox" id="check-guides" checked /> Guides
+        </label>
+        <label style="display: flex; align-items: center; gap: 4px; font-size: 13px; color: #475569; font-weight: 500; cursor: pointer;">
+          <input type="checkbox" id="check-headers-footers" checked /> Header/Footer
+        </label>
+        <label style="display: flex; align-items: center; gap: 4px; font-size: 13px; color: #475569; font-weight: 500; cursor: pointer;">
+          <input type="checkbox" id="check-clamp-scroll" checked /> Bound Scroll
+        </label>
+        <button id="btn-zoom-out">Zoom -</button>
+        <span id="zoom-label" style="font-size: 13px; min-width: 45px; text-align: center">100%</span>
+        <button id="btn-zoom-in">Zoom +</button>
+        <button id="btn-reset">Reset View</button>
+        <button class="primary" id="btn-add-page">+ Add Page</button>
+      </div>
+    </header>
+    <main id="canvas-host"></main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
