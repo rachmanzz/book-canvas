@@ -15,15 +15,15 @@ const markdownAdapter: CanvasAdapter = {
 
     article.innerHTML = `
       <h1 style="font-size: 22px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 16px;">
-        Bab ${context.pageIndex + 1}: Spesifikasi Desain
+        Chapter ${context.pageIndex + 1}: Architecture Specification
       </h1>
       <p style="margin-bottom: 14px;">
-        Dokumen ini me-render struktur <strong>Markdown</strong> yang terformat bersih di dalam kontainer halaman fisik.
+        This document renders clean, structured <strong>Markdown</strong> blocks inside a physical paged container with isolated layout margins.
       </p>
       <blockquote style="border-left: 3px solid #0f766e; padding-left: 12px; color: #475569; margin: 12px 0; font-style: italic;">
-        "Setiap halaman mengisolasi konten melalui kontrak CanvasAdapter tanpa mengubah inti canvas."
+        "Each physical page bounds slot content via the CanvasAdapter contract without polluting canvas internals."
       </blockquote>
-      <h3 style="font-size: 16px; margin: 16px 0 8px;">Daftar Modul</h3>
+      <h3 style="font-size: 16px; margin: 16px 0 8px;">Core Modules</h3>
       <ul style="padding-left: 20px; margin-bottom: 14px;">
         <li>Core Viewport Transform</li>
         <li>Page Manager & Margins</li>

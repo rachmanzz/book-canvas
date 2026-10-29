@@ -27,17 +27,17 @@ const posterAdapter: CanvasAdapter = {
           DESIGN SUMMIT 2026
         </h1>
         <p contenteditable="true" style="font-size: 14px; color: #a1a1aa; line-height: 1.6; outline: none; max-width: 450px;">
-          Konferensi arsitektur sistem desain grafis dan kolaborasi kanvas digital. Klik teks ini untuk mengedit langsung di atas lembaran artboard.
+          Digital canvas and document architecture conference. Click this text to edit directly on the artboard sheet.
         </p>
       </div>
 
       <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 20px;">
         <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; color: #c4b5fd;">
-          <span>29 OKTOBER 2026</span>
-          <span>JAKARTA / HYBRID</span>
+          <span>OCTOBER 29, 2026</span>
+          <span>GLOBAL / VIRTUAL</span>
         </div>
         <div style="font-size: 11px; color: #71717a; margin-top: 6px;">
-          Navigasi Kanvas: Klik tengah atau tahan drag pada background hitam untuk menggeser artboard secara bebas ke segala arah (360° pan).
+          Canvas Navigation: Middle click or drag on the dark background to pan freely in any direction (360° pan).
         </div>
       </div>
     `;

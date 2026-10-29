@@ -16,18 +16,18 @@ const pdfAdapter: CanvasAdapter = {
     page.innerHTML = `
       <div>
         <div style="font-size: 10px; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">
-          Laporan Resmi PDF • Bagian ${context.pageIndex + 1}
+          Official Report • Section ${context.pageIndex + 1}
         </div>
         <h2 style="font-size: 24px; font-family: sans-serif; color: #0f172a; margin-bottom: 16px;">
-          Pratinjau Cetak Lembar Dokumen
+          Print Layout Preview
         </h2>
         <p style="font-size: 14px; line-height: 1.8; color: #334155; margin-bottom: 16px;">
-          Contoh ini mendemonstrasikan integrasi pencetakan <code>@media print</code> standar browser. Saat tombol <strong>Print / Save PDF</strong> ditekan, seluruh dekorasi layar (toolbar dan latar belakang abu-abu) disembunyikan sehingga menghasilkan PDF bersih per halaman A4.
+          This sample demonstrates standard browser <code>@media print</code> styling. When triggering <strong>Print / Save PDF</strong>, the canvas host hides viewport controls and gray background gutters, producing clean paginated A4 sheets ready for PDF export.
         </p>
       </div>
       <div style="border-top: 1px solid #cbd5e1; padding-top: 12px; display: flex; justify-content: space-between; font-size: 11px; color: #64748b; font-family: sans-serif;">
         <span>Book Canvas PDF Module</span>
-        <span>Dokumen Sah</span>
+        <span>Verified Document</span>
       </div>
     `;
 

@@ -24,12 +24,12 @@ const wordAdapter: CanvasAdapter = {
     editor.style.fontFamily = 'Georgia, serif';
 
     editor.innerHTML = `
-      <h2 style="font-size: 18px; color: #0f172a; margin-bottom: 12px; font-family: system-ui;">Halaman Dokumen ${context.pageIndex + 1}</h2>
+      <h2 style="font-size: 18px; color: #0f172a; margin-bottom: 12px; font-family: system-ui;">Document Page ${context.pageIndex + 1}</h2>
       <p style="margin-bottom: 12px;">
-        Ini adalah demonstrasi <strong>Word Adapter</strong>. Konten teks terkurung rapi di dalam batas margin lembaran fisik A4.
+        This demonstrates the <strong>Word Adapter</strong>. Text content is confined within physical A4 margins.
       </p>
       <p>
-        Coba ketik atau edit teks ini langsung, ubah tingkat zoom, atau tambahkan halaman baru.
+        Type or edit text directly in this container, change zoom levels, or append new pages.
       </p>
     `;
 

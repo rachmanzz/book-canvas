@@ -25,14 +25,14 @@ const slideAdapter: CanvasAdapter = {
             Pitch Deck
           </span>
           <h1 style="font-size: 36px; font-weight: 700; margin-top: 16px; letter-spacing: -0.5px;">
-            Arsitektur Book Canvas
+            Book Canvas Architecture
           </h1>
           <p style="font-size: 16px; color: #94a3b8; margin-top: 12px; max-width: 600px;">
-            Headless paged canvas runtime untuk aplikasi dokumen modern berbasis web.
+            Headless paged canvas runtime for discrete, responsive document layouts.
           </p>
         </div>
         <div style="font-size: 12px; color: #64748b;">
-          Slide 1 • Presentasi Tim
+          Slide 1 • Architecture Overview
         </div>
       `;
     } else {
@@ -42,20 +42,20 @@ const slideAdapter: CanvasAdapter = {
       slide.innerHTML = `
         <div>
           <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 24px;">
-            <h2 style="font-size: 24px; font-weight: 600;">Slide ${context.pageIndex + 1}: Kapabilitas Paged Canvas</h2>
-            <span style="font-size: 12px; color: #64748b;">Aspek Rasio 16:9</span>
+            <h2 style="font-size: 24px; font-weight: 600;">Slide ${context.pageIndex + 1}: Paged Canvas Runtime</h2>
+            <span style="font-size: 12px; color: #64748b;">16:9 Aspect Ratio</span>
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
             <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
-              <h3 style="font-size: 15px; margin-bottom: 8px; color: #ea580c;">Bebas Ketergantungan</h3>
+              <h3 style="font-size: 15px; margin-bottom: 8px; color: #ea580c;">Zero Content Coupling</h3>
               <p style="font-size: 13px; color: #475569; line-height: 1.6;">
-                Canvas tidak memproses teks internal sehingga adapter bebas me-render elemen apa pun di dalam slot lembaran.
+                The host canvas does not process text or shapes internally, allowing guest adapters to mount arbitrary content.
               </p>
             </div>
             <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
-              <h3 style="font-size: 15px; margin-bottom: 8px; color: #ea580c;">Tata Letak Dinamis</h3>
+              <h3 style="font-size: 15px; margin-bottom: 8px; color: #ea580c;">Dynamic Layout Flow</h3>
               <p style="font-size: 13px; color: #475569; line-height: 1.6;">
-                Mendukung perbesaran zoom, penomoran slide otomatis, serta isolasi margin yang aman.
+                Supports coordinate zooming, auto-wrapping columns when zoomed out, and strict boundary containment.
               </p>
             </div>
           </div>
