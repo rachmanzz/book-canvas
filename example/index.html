@@ -60,6 +60,25 @@
       .repo-button:hover {
         background: #334155;
       }
+      .notice-box {
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        border-radius: 8px;
+        padding: 14px 16px;
+        margin-top: 18px;
+        font-size: 13px;
+        line-height: 1.6;
+        color: #1e3a8a;
+      }
+      .notice-box strong {
+        color: #1d4ed8;
+      }
+      .notice-box code {
+        background: #dbeafe;
+        padding: 1px 4px;
+        border-radius: 4px;
+        font-size: 12px;
+      }
       .grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -139,6 +158,9 @@
         <p class="lead">
           <code>book-canvas</code> is a headless client-side runtime for discrete paged document layouts. Content rendering is decoupled and driven entirely by external adapters.
         </p>
+        <div class="notice-box">
+          <strong>Demonstration Notice:</strong> The showcases below are lightweight mockups demonstrating how <code>book-canvas</code> manages physical page boundaries, margins, headers/footers, and pan/zoom coordinates. They do <em>not</em> render real <code>.docx</code>, <code>.xlsx</code>, or full Markdown files. To integrate real office applications, design tools, or document renderers, you must implement your own custom <code>CanvasAdapter</code>.
+        </div>
       </header>
 
       <section>

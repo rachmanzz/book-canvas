@@ -130,7 +130,21 @@ yarn install
 yarn dev
 ```
 
-Run test suites:
+Build showcase pages for static hosting:
+
+```bash
+yarn build:pages
+```
+
+## Demonstration Samples and Adapter Scope
+
+The examples provided in the `example/` folder and published on the [live showcase](https://rachmanzz.github.io/book-canvas/) are lightweight mockups created to demonstrate how `book-canvas` handles page lifecycle, viewport transforms, margin clipping, and header/footer numbering.
+
+- They do **not** parse or render real binary Office formats (`.docx`, `.xlsx`), full Markdown ASTs, or native PDF documents.
+- The UI shown inside each slot is illustrative placeholder content.
+- To build a functional document editor, spreadsheet, or vector studio, you must provide your own `CanvasAdapter` that mounts your chosen rendering engine or editor into the provided `CanvasContext.container`.
+
+## Testing and Building
 
 ```bash
 yarn test
