@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import dts from 'vite-plugin-dts';
 
 export default defineConfig(({ command }) => {
@@ -34,7 +34,6 @@ export default defineConfig(({ command }) => {
         rollupTypes: true,
       }),
     ],
-    // @ts-expect-error vitest config
     test: {
       root: resolve(__dirname),
       include: ['tests/**/*.test.ts'],

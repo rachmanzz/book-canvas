@@ -46,7 +46,7 @@ export class SlotManager {
     }
   }
 
-  public resizePage(pageIndex: number, dimensions: PageRecord['dimensions']): void {
+  public resizePage(_pageIndex: number, dimensions: PageRecord['dimensions']): void {
     if (this.adapter?.resize) {
       this.adapter.resize(dimensions);
     }

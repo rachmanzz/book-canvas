@@ -1,4 +1,4 @@
-import { A4_DIMENSIONS, BookCanvas } from '../../src/index';
+import { BookCanvas } from '../../src/index';
 import { CanvasAdapter, CanvasContext } from '../../src/adapter/types';
 
 const spreadsheetAdapter: CanvasAdapter = {
