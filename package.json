@@ -4,6 +4,13 @@
   "packageManager": "yarn@4.18.1",
   "license": "Apache-2.0",
   "author": "Muhammad Abdurrahman",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachmanzz/book-canvas.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",

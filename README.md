@@ -1,5 +1,8 @@
 # book-canvas
 
+[![npm version](https://img.shields.io/npm/v/@rahmantech/book-canvas.svg)](https://www.npmjs.com/package/@rahmantech/book-canvas)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+
 A headless, client-side TypeScript library for paged document layouts.
 
 `book-canvas` manages paper sheets (A4, Letter, Legal), coordinate transforms (zoom and pan), margin boundaries, and collaborator cursor overlays. It does not parse or edit documents; content engines (such as text editors, spreadsheets, or canvas tools) attach to each page through an adapter interface.
@@ -21,17 +24,15 @@ A headless, client-side TypeScript library for paged document layouts.
 
 ## Installation
 
-Install directly from the GitHub repository:
-
 ```bash
-yarn add git+https://github.com/rachmanzz/book-canvas.git
+yarn add @rahmantech/book-canvas
 ```
 
 Or using npm / pnpm:
 
 ```bash
-npm install git+https://github.com/rachmanzz/book-canvas.git
-pnpm add git+https://github.com/rachmanzz/book-canvas.git
+npm install @rahmantech/book-canvas
+pnpm add @rahmantech/book-canvas
 ```
 
 ## Quick Start
