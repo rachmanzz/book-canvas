@@ -37,8 +37,8 @@ pnpm add git+https://github.com/rachmanzz/book-canvas.git
 ## Quick Start
 
 ```typescript
-import { BookCanvas, A4_DIMENSIONS } from 'book-canvas';
-import type { CanvasAdapter, CanvasContext } from 'book-canvas';
+import { BookCanvas, A4_DIMENSIONS } from '@rahmantech/book-canvas';
+import type { CanvasAdapter, CanvasContext } from '@rahmantech/book-canvas';
 
 // 1. Define a minimal adapter
 const textAdapter: CanvasAdapter = {

@@ -1,5 +1,5 @@
 {
-  "name": "book-canvas",
+  "name": "@rahmantech/book-canvas",
   "version": "0.1.0",
   "packageManager": "yarn@4.18.1",
   "license": "Apache-2.0",
